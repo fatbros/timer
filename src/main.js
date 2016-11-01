@@ -21,7 +21,6 @@ Vue.material.theme.registerAll({
 /**
  * Vue Componentを定義する
  */
-const sidenav = require('./component/sidenav/sidenav.vue');
-Vue.component('tm-sidenav', Vue.extend(sidenav));
+const Sidenav = require('./component/sidenav/sidenav.vue');
 
-var app = new Vue().$mount('#app');
+new Vue(Sidenav).$mount('#app');
