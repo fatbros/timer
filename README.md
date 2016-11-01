@@ -1,2 +1,5 @@
 * `npm install`
-* `npm start`
+* `npm dev`
+
+## heroku
+https://vue-timer.herokuapp.com/
