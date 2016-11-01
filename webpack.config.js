@@ -1,14 +1,16 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
+
     entry: {
-        js: './src/main.js',
-        html: './index.html'
+        js: './src/main.js'
     },
 
     output: {
-        path: __dirname + "/dest",
-        filename: 'build.js'
+        path: __dirname + '/dest',
+        filename: 'build.js',
+        publicPath: '/dest/'
     },
 
     // Configuration for dev server
@@ -27,13 +29,13 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.html$/,
-                loader: "file?name=[name].[ext]",
-            },
-            {
                 test: /\.css$/,
                 loaders: ['style', 'css'],
             }
         ]
-    }
+    },
+
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 }
