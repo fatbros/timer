@@ -21,14 +21,7 @@
 </template>
 
 <script>
-    import sidenav from './sidenav.vue'
     export default {
-        name: 'tm-sidenav',
-
-        components: {
-            sidenav: sidenav
-        },
-
         methods: {
             toggleLeftSidenav() {
                 this.$refs.leftSidenav.toggle();

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+// import Vue from '../node_modules/vue/dist/vue.js';
 
 /**
  * vue-materialを使用する
@@ -23,4 +24,14 @@ Vue.material.theme.registerAll({
  */
 import App from './app.vue';
 
+console.log(App);
+
+var a = Vue.extend(App);
+
+console.log(a);
+
+// Vue.component('app', a);
+// Vue.component('app', App);
+
 new Vue(App).$mount('#app');
+new a().$mount('#app');
