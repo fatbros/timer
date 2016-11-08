@@ -24,14 +24,14 @@ Vue.material.theme.registerAll({
  */
 import App from './app.vue';
 
-console.log(App);
+new Vue({
+    el: '#app',
+    // @see https://vuejs.org/v2/guide/instance.html
+    // beforeMountイベントが走る前に、Appコンポネントをテンプレートとしてrenderする
+    render: function(createElement) {
+        return createElement(App);
+    }
+});
 
-var a = Vue.extend(App);
 
-console.log(a);
-
-// Vue.component('app', a);
-// Vue.component('app', App);
-
-new Vue(App).$mount('#app');
-new a().$mount('#app');
+// new Vue(App).$mount('#app');
