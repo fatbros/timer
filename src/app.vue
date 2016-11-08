@@ -7,7 +7,7 @@ import Sidenav from './component/sidenav/sidenav.vue';
 
 export default {
     components: {
-        sidenav: Sidenav
+        'sidenav': Sidenav
     }
 };
 </script>
