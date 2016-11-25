@@ -1,4 +1,4 @@
-import Vue from '../node_modules/vue/dist/vue.js';
+import Vue from 'vue';
 
 /**
  * vue-materialを使用する
@@ -21,6 +21,13 @@ Vue.material.theme.registerAll({
 /**
  * Vue Componentを定義する
  */
-const Sidenav = require('./component/sidenav/sidenav.vue');
+import App from './app.vue';
 
-new Vue(Sidenav).$mount('#app');
+new Vue({
+    el: '#app',
+    // @see https://vuejs.org/v2/guide/instance.html
+    // beforeMountイベントが走る前に、Appコンポネントをテンプレートとしてrenderする
+    render: function(createElement) {
+        return createElement(App);
+    }
+});
