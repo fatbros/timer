@@ -1,5 +1,4 @@
 import Vue from 'vue';
-// import Vue from '../node_modules/vue/dist/vue.js';
 
 /**
  * vue-materialを使用する
@@ -32,6 +31,3 @@ new Vue({
         return createElement(App);
     }
 });
-
-
-// new Vue(App).$mount('#app');
