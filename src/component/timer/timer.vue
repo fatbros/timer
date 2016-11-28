@@ -1,20 +1,35 @@
 <template lang="html">
     <div class="c-timer">
-        <p>
-            test
-        </p>
+        <p>renderTime: {{renderTime}}</p>
     </div>
 </template>
 
 <script>
-// timer
-import Timer from '../../lib/timer.js';
+    import Timer from '../../lib/timer.js';
+    var t = new Timer();
 
-var t = new Timer();
-t.init();
-t.on('updatePast', (pastTime) => {
-    console.log(pastTime);
-});
+    export default {
+        data () {
+            return {
+                renderTime: 0
+            };
+        },
+
+        mounted () {
+            t.init();
+            t.on('updatePast', (pastTime) => {
+                this.updateRenderTime = pastTime;
+            });
+        },
+
+        computed: {
+            updateRenderTime: {
+                set (time) {
+                    this.renderTime = time;
+                }
+            }
+        }
+    };
 </script>
 
 <style lang="css">
