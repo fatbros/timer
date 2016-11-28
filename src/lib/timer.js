@@ -7,16 +7,30 @@ class Timer extends emitter {
 
     init() {
         this.time = {
-            inited: Date.now()
+            inited: Date.now(),
+            past: 0
         };
 
         this.initializeEvents();
     }
 
     initializeEvents() {
-        setInterval(() => {
-            this.emit('updatePast', this.getPast());
+        this.start();
+    }
+
+    start() {
+        this.intervalTimer = setInterval(() => {
+            this.time.past = this.getPast();
+            this.emit('updatePast', this.time.past);
         }, 1000/60);
+    }
+
+    stop() {
+        this.destory();
+    }
+
+    destory() {
+        clearInterval(this.intervalTimer);
     }
 
     getPast() {

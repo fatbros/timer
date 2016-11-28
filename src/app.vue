@@ -1,18 +1,18 @@
 <template lang="html">
     <div id="container">
         <sidenav></sidenav>
-        <timer></timer>
+        <timerController></timerController>
     </div>
 </template>
 
 <script>
 import Sidenav from './component/sidenav/sidenav.vue';
-import Timer from './component/timer/timer.vue';
+import TimerController from './component/timer/timerController.vue';
 
 export default {
     components: {
-        'sidenav': Sidenav,
-        'timer': Timer
+        sidenav: Sidenav,
+        timerController: TimerController
     }
 };
 </script>
