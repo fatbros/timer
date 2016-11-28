@@ -3,7 +3,9 @@
         <md-button class="md-raised md-primary" @click="addTimer">Add</md-button>
         <md-button class="md-raised md-accent" @click="clearTimer">Clear</md-button>
 
-        <timer v-for="timer in timerInstances"></timer>
+        <md-list>
+            <timer v-for="timer in timerInstances"></timer>
+        </md-list>
     </div>
 </template>
 

@@ -1,7 +1,10 @@
 <template lang="html">
-    <div class="c-timer">
-        <p>renderTime: {{renderTime}}</p>
-    </div>
+    <md-list-item>
+        <md-icon>timer</md-icon>
+        <span>pastTime {{renderTime}}</span>
+
+        <md-button class="md-raised md-primary" @click="stopTimer">Stop</md-button>
+    </md-list-item>
 </template>
 
 <script>
@@ -27,6 +30,12 @@
                 set (time) {
                     this.renderTime = time;
                 }
+            }
+        },
+
+        methods: {
+            stopTimer () {
+                this.timer.stop();
             }
         },
 

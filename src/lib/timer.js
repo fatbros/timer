@@ -19,6 +19,10 @@ class Timer extends emitter {
         }, 1000/60);
     }
 
+    stop() {
+        this.destory();
+    }
+
     destory() {
         clearInterval(this.intervalTimer);
     }
