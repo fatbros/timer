@@ -6,7 +6,6 @@
 
 <script>
     import Timer from '../../lib/timer.js';
-    var t = new Timer();
 
     export default {
         data () {
@@ -16,8 +15,9 @@
         },
 
         mounted () {
-            t.init();
-            t.on('updatePast', (pastTime) => {
+            this.timer = new Timer();
+            this.timer.init();
+            this.timer.on('updatePast', (pastTime) => {
                 this.updateRenderTime = pastTime;
             });
         },
@@ -28,6 +28,10 @@
                     this.renderTime = time;
                 }
             }
+        },
+
+        destroyed () {
+            this.timer.destory();
         }
     };
 </script>
